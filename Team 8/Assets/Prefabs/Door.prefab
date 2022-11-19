@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destinationScene: {fileID: 102900000, guid: 947273175fa6e1746970a17332dfabef, type: 3}
-  numOfRespown: 0
+  _numOfRespown: 0
+  _needKey: 0
+  _needGeneralPower: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovment : MonoBehaviour
 {
+    //[Seri]
+
     // Start is called before the first frame update
     void Start()
     {
