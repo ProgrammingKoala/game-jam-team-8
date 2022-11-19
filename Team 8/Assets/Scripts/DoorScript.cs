@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField] private Object _destinationScene;
-    [SerializeField] private int numOfRespown;
+    [SerializeField] private int _numOfRespown = 0;
     private bool _isPlayerColliding;
 
     private void Update()
@@ -16,6 +16,7 @@ public class DoorScript : MonoBehaviour
         {
             _isPlayerColliding = false;
             GameEvents.onDoorCollision(false);
+            GameStatics.respownPointNumber = _numOfRespown;
             SceneManager.LoadScene(_destinationScene.name);
         }
     }
@@ -26,10 +27,6 @@ public class DoorScript : MonoBehaviour
         {
             GameEvents.onDoorCollision(true);
             _isPlayerColliding= true;
-            if (numOfRespown.IsUnityNull())
-            {
-                numOfRespown= 0;
-            }
         }
     }
 
