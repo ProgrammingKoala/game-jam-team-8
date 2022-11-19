@@ -10,6 +10,5 @@ public class GameEvents
     void DoorCollision(bool isColliding)
     {
         onDoorCollision?.Invoke(isColliding);
-    }
-   
+    }  
 }

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instractions.unity
     guid: ddf0800923d63974283ab1571b0be820
+  - enabled: 1
+    path: Assets/Scenes/TestChangeRoomScene 1.unity
+    guid: 71ce89a8703d1a941985469471334278
+  - enabled: 1
+    path: Assets/Scenes/TestChangeRoomScene2.unity
+    guid: 947273175fa6e1746970a17332dfabef
   m_configObjects: {}
