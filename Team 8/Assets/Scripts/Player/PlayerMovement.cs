@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        GameStatics.playerPosition = transform;
         if (moveSmooth)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
