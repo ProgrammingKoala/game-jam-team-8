@@ -14,6 +14,7 @@ public class DoorScript : MonoBehaviour
     {
         if (_isPlayerColliding && Input.GetButton(ButtonNames.Action))
         {
+            Debug.Log("Change scene");
             _isPlayerColliding = false;
             GameEvents.onDoorCollision(false);
             GameStatics.respownPointNumber = _numOfRespown;
