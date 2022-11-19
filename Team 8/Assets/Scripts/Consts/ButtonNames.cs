@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class ButtonNames
 {
-    public const string VerticalAxis = "Vertical";
+    public const string HorizontalAxis = "Horizontal";
+    public const string Action = "Action";
 }

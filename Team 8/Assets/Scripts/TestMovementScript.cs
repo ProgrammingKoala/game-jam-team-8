@@ -15,8 +15,8 @@ public class TestMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float _verticalDirection = Input.GetAxis(ButtonNames.VerticalAxis);
-        _rb.velocity = new Vector2(_verticalDirection*300, _rb.velocity.y);    
+        float _horizontalDirection = Input.GetAxis(ButtonNames.HorizontalAxis);
+        _rb.velocity = new Vector2(_horizontalDirection*3, _rb.velocity.y);    
 
     }
 }
