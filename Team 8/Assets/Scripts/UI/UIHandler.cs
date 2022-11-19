@@ -16,6 +16,11 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SceneConsts.CREATORS);
     }
+
+    public void LoadLevel1_1()
+    {
+        SceneManager.LoadScene(SceneConsts.LEVEL1_1);
+    }
     public void Exit()
     {
         Application.Quit();
