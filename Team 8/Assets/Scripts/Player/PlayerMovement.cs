@@ -50,12 +50,12 @@ public class PlayerMovement : MonoBehaviour
         if (moveHorizontal < 0)
         {
             isFacingRight = false;
-            flip();
+            Flip();
         }
         else if (moveHorizontal > 0)
         {
             isFacingRight = true;
-            flip();
+            Flip();
         }
 
         //poruszanie Playera
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
     
     //odwracanie Playera
-    void flip()
+    void Flip()
     {
         if (!isFacingRight)
             transform.localScale = new Vector3(-1, 1, 1);
@@ -95,12 +95,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     //freezowanie Playera
-    void setFreeze()
+    public void SetFreeze()
     {
         freeze = true;
     }
 
-    void setUnFreeze()
+    public void SetUnFreeze()
     {
         freeze = false;
     }
