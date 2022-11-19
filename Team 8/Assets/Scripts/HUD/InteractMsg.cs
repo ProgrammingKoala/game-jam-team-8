@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MoveToAnotherRoomText : MonoBehaviour
+public class InteractMsg : MonoBehaviour
 {
     private TextMeshProUGUI _tmp;
     // Start is called before the first frame update
