@@ -43,7 +43,6 @@ public class DoorScript : MonoBehaviour
         }
         else if (_isPlayerColliding && Input.GetButton(ButtonNames.Action))
         {
-            Debug.Log("Change scene");
             _isPlayerColliding = false;
             GameStatics.respownPointNumber = _numOfRespown;
             StartCoroutine(ReloadScene());
