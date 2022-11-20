@@ -25,6 +25,14 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
+        if(GameStatics.haveKey)
+        {
+            _needKey = false;
+        }
+        if (GameStatics.powerIsOn)
+        {
+            _needGeneralPower = false;
+        }
         if (_isPlayerColliding && _isClosed && _needKey) 
         {
             GameEvents.onMessage("You need a key");
