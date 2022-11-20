@@ -20,6 +20,7 @@ public class UIHandler : MonoBehaviour
     public void LoadLevel1_1()
     {
         SceneManager.LoadScene(SceneConsts.LEVEL1_1);
+        GameStatics.playerCurrentHealth = GameStatics.playerMaxHealth;
     }
     public void Exit()
     {

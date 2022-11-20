@@ -28,7 +28,7 @@ public class PlayerExistance : MonoBehaviour
             currentHP -= 25;
             GameStatics.playerCurrentHealth = currentHP;
         }
-        else if (currentHP == 0 && !(_isDying || _damageOnCooldown))
+        else if (currentHP <= 0 && !(_isDying || _damageOnCooldown))
         {
             StartCoroutine(Die());
         }
