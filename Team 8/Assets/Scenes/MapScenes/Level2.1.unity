@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
+      propertyPath: _numOfRespown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
+      propertyPath: _destinationScene
+      value: 
+      objectReference: {fileID: 102900000, guid: e02d378ae59b1544db43c264ea984c81, type: 3}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -258,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1111412674272114422, guid: 9d0c20ec9bac2d94e90c2b6c2e8c006a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.8
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 1111412674272114422, guid: 9d0c20ec9bac2d94e90c2b6c2e8c006a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -368,12 +376,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: _numOfRespown
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: _destinationScene
       value: 
-      objectReference: {fileID: 102900000, guid: 7597489629d1b444cabd4bbcab5e6924, type: 3}
+      objectReference: {fileID: 102900000, guid: 00c58aa8e5c1b734aa94f0d800e9865b, type: 3}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 4
