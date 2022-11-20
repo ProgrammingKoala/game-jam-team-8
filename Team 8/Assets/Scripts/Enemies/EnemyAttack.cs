@@ -38,7 +38,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (_isAttacking && collision.gameObject.CompareTag("Player"))
+        if (_isAttacking && collision.gameObject.CompareTag("Player") && !GameStatics.playerIsParrying)
         {
             GameEvents.onPlayerTakeDamage();
         }

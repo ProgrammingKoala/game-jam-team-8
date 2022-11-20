@@ -8,7 +8,6 @@ public class PlayerExistance : MonoBehaviour
     
     private Animator _animator;
     
-    //[SerializeField] float _takeDamageCooldown;
     private static int currentHP;
     private bool _damageOnCooldown;
     private bool _isDying;
