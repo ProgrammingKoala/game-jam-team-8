@@ -24,7 +24,6 @@ public class PlayerExistance : MonoBehaviour
         if (currentHP > 0 && !(_isDying || _damageOnCooldown))
         {
             StartCoroutine(TakeDamageEnme(GameStatics.takeDamageCooldown));
-            currentHP -= 25;
             GameStatics.playerCurrentHealth = currentHP;
             Debug.Log(GameStatics.playerCurrentHealth);
         }
@@ -51,7 +50,8 @@ public class PlayerExistance : MonoBehaviour
     {
         _damageOnCooldown = true;
         _animator.SetTrigger(AnimatorNames.PLAYERTAKEDAMAGE);
-        yield return new WaitForSeconds(cooldown);
+        currentHP -= 10;
+        yield return new WaitForSeconds(3);
         _damageOnCooldown = false;
     }
 
