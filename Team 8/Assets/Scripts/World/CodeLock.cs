@@ -20,8 +20,6 @@ public class CodeLock : MonoBehaviour
     void Start()
     {
         Hide();
-        player = GameObject.FindWithTag("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
 
         // int tmp = inputField.characterLimit.get();
         // Debug.Log(inputField.characterLimit);
@@ -34,6 +32,13 @@ public class CodeLock : MonoBehaviour
 
     void Update()
     {
+        //tutaj bo w Start() za wcześniej próbowało złapać gracza i był NullPointer
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            playerMovement = player.GetComponent<PlayerMovement>();
+        }
+
         
         if (_isPlayerColliding && !messageShown)
         {
@@ -45,7 +50,7 @@ public class CodeLock : MonoBehaviour
         {
             messageShown = true;
             Show();
-            playerMovement.SetFreeze();
+            // playerMovement.SetFreeze();
             inputField.Select();
             isFieldOpen = true;
         }
