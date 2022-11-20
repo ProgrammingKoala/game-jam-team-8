@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestChangeRoomScene2.unity
     guid: 947273175fa6e1746970a17332dfabef
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 79eaf9521df63784ea0aa8c0019383cc
   m_configObjects: {}
