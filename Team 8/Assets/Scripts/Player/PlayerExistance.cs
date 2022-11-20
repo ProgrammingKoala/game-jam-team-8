@@ -8,7 +8,7 @@ public class PlayerExistance : MonoBehaviour
     
     private Animator _animator;
     
-    [SerializeField] float _takeDamageCooldown;
+    //[SerializeField] float _takeDamageCooldown;
     private static int currentHP;
     private bool _damageOnCooldown;
     private bool _isDying;
@@ -24,15 +24,20 @@ public class PlayerExistance : MonoBehaviour
     {
         if (currentHP > 0 && !(_isDying || _damageOnCooldown))
         {
-            StartCoroutine(TakeDamageEnme(_takeDamageCooldown));
+            StartCoroutine(TakeDamageEnme(GameStatics.takeDamageCooldown));
             currentHP -= 25;
             GameStatics.playerCurrentHealth = currentHP;
+            Debug.Log(GameStatics.playerCurrentHealth);
         }
-        else if (currentHP <= 0 && !(_isDying || _damageOnCooldown))
+        CheckIfDying();     
+    }
+
+    private void CheckIfDying()
+    {
+        if (GameStatics.playerCurrentHealth <= 0)
         {
             StartCoroutine(Die());
-        }
-
+        }    
     }
 
     private IEnumerator Die()

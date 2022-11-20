@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
-  _takeDamageCooldown: 1
+  _takeDamageCooldown: 0.5
 --- !u!1 &2645311874484776472
 GameObject:
   m_ObjectHideFlags: 0
