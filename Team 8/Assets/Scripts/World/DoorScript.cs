@@ -35,7 +35,7 @@ public class DoorScript : MonoBehaviour
         }
         if (_isPlayerColliding && _isClosed && _needKey) 
         {
-            GameEvents.onMessage("You need a key");
+            GameEvents.onMessage("You need a key card");
         }
         else if (_isPlayerColliding && _isClosed && _needGeneralPower)
         {
@@ -43,7 +43,6 @@ public class DoorScript : MonoBehaviour
         }
         else if (_isPlayerColliding && Input.GetButton(ButtonNames.Action))
         {
-            Debug.Log("Change scene");
             _isPlayerColliding = false;
             GameStatics.respownPointNumber = _numOfRespown;
             StartCoroutine(ReloadScene());

@@ -20,8 +20,6 @@ public class CodeLock : MonoBehaviour
     void Start()
     {
         Hide();
-        player = GameObject.FindWithTag("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
 
         // int tmp = inputField.characterLimit.get();
         // Debug.Log(inputField.characterLimit);
@@ -34,6 +32,13 @@ public class CodeLock : MonoBehaviour
 
     void Update()
     {
+        //tutaj bo w Start() za wcześniej próbowało złapać gracza i był NullPointer
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            playerMovement = player.GetComponent<PlayerMovement>();
+        }
+
         
         if (_isPlayerColliding && !messageShown)
         {
@@ -45,7 +50,7 @@ public class CodeLock : MonoBehaviour
         {
             messageShown = true;
             Show();
-            playerMovement.SetFreeze();
+            // playerMovement.SetFreeze();
             inputField.Select();
             isFieldOpen = true;
         }
@@ -66,7 +71,8 @@ public class CodeLock : MonoBehaviour
                 GameEvents.onMessage("Wrong code! Provide correct code or press Esc to leave");
             else
             {
-                GameEvents.onMessage("Correct code! You found a key");
+                GameEvents.onMessage("Correct code! You found a Key Card");
+                GameStatics.haveKey = true;
                 StartCoroutine(CloseInSeconds(3f));
             }
         }
