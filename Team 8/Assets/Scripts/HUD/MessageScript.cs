@@ -7,7 +7,7 @@ public class MessageScript : MonoBehaviour
 {
     private TextMeshProUGUI _tmp;
     private bool _onCooldown;
-    [SerializeField] private float _massageCooldown = 3;
+    [SerializeField] private float _massageCooldown = 0.5f;
 
     private void Start()
     {

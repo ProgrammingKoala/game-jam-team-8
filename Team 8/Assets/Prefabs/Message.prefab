@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45382db61fe899419bd4fc8d8af399a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _massageCooldown: 3
+  _massageCooldown: 0.5

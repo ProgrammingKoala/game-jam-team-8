@@ -36,13 +36,12 @@ public class DoorScript : MonoBehaviour
         {
             Debug.Log("Change scene");
             _isPlayerColliding = false;
-            GameEvents.onDoorCollision(false);
             GameStatics.respownPointNumber = _numOfRespown;
             SceneManager.LoadScene(_destinationScene.name);
         }
         else if (_isPlayerColliding)
         {
-            GameEvents.onDoorCollision(true);
+            GameEvents.onMessage("Press E to interact");
         }
     }
 
@@ -58,7 +57,7 @@ public class DoorScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))  //TODO Zmieniec na const z tagami
         {
-            GameEvents.onDoorCollision(false);
+            //GameEvents.onDoorCollision(false);
             _isPlayerColliding = false;
         }
     }
