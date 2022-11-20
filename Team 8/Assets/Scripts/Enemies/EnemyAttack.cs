@@ -6,7 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
 
     private SpriteRenderer _sr;
-    private bool _onCooldown;
+    private bool _onCooldown = false;
     [SerializeField] private float _attackCooldown;
     private bool _isAttacking;
     private bool _isTouchingPlayer;

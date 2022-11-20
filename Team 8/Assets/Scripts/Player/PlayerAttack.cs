@@ -53,9 +53,7 @@ public class PlayerAttack : MonoBehaviour
         
         GameStatics.playerIsParrying = true;
         yield return new WaitForSeconds(0.7f);
-        GameStatics.playerIsParrying = false;
-        
-
+        GameStatics.playerIsParrying = false;   
         yield return new WaitForSeconds(seconds);
 
         _parryOnCooldown = false;
@@ -65,6 +63,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (_isAttacking && collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("You hit enemy!");
             GameEvents.onEnemyTakeDamage();
             collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
