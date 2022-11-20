@@ -34,10 +34,12 @@ public class CodeLockKey : MonoBehaviour
 
                 // !isRead && !displayCodeRunning
                 StartCoroutine(displayCode());
+            GameStatics.haveKey = true;
+            GameEvents.onMessage("You found a Key Card!");
                 isRead = true;                
             }
         }
-
+/*
         //ponowne uruchomienia wyswietlenia kodu
         if (_isPlayerColliding && isIntroduced && !displayCodeRuning && !thoughtRuning)
         {
@@ -55,11 +57,16 @@ public class CodeLockKey : MonoBehaviour
             //setup pod ponowne uruchomienie
             // isRead = false;
         }
-
+*/
 
         //wyswietla CodeLockKey w trakcie działania korutyny
-        if (displayCodeRuning)
-            GameEvents.onMessage("Secret number: 2_37");
+        if (displayCodeRuning) 
+        {
+            this.gameObject.SetActive(false);
+            // GameEvents.onMessage("Secret number: 2_37");
+
+
+        }
         
         //wyświetla podpowiedź w trakcie działania korutyny
         if (thoughtRuning)
