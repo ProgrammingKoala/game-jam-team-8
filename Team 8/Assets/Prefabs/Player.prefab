@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8922813906916021250}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 3129419420533813576}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,6 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a303b1e2bfe532445833f5a9dd4b96ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  _takeDamageCooldown: 0
 --- !u!1 &8515484852220187462
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +545,7 @@ GameObject:
   - component: {fileID: 1282420901087786399}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
