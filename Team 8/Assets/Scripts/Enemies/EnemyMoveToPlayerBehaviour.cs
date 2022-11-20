@@ -7,7 +7,6 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private float _speed;
     private GameObject _player;
-    public float xDirection;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,8 +18,9 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        xDirection = (animator.transform.position.x - _player.transform.position.x) < 0 ? 1 : -1;
+        float xDirection = (animator.transform.position.x - _player.transform.position.x) < 0 ? 1 : -1;
         _rb.velocity = new Vector2(xDirection * _speed, 0);
+        animator.SetFloat("distanceFromPlayer", Mathf.Abs(animator.transform.position.x - _player.transform.position.x));
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -28,16 +28,4 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     {
         _rb.velocity = new Vector2(0 , 0);
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

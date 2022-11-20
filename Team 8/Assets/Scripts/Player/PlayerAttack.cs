@@ -12,10 +12,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _parryCooldown;
     private bool _isAttacking;
     private Animator _animator;
+    private Rigidbody2D _rb;
  
     void Start()
     {      
         _animator = GetComponentInParent<Animator>();
+        _rb= GetComponentInParent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -62,8 +64,11 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator waitToAttack(float seconds, Collider2D collision)
     {
-        yield return new WaitForSeconds(seconds);
-        Destroy(collision.gameObject);
+        yield return new WaitForSeconds(1);
+        if(collision!= null) {
+            Destroy(collision.gameObject);
+        }
+        _rb.velocity = Vector2.zero;
     }
 
 
@@ -85,9 +90,11 @@ public class PlayerAttack : MonoBehaviour
 
             //// collision.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(hitVector * 2000);
             // collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward);
-
+            
 
             StartCoroutine(waitToAttack(2, collision));
+            
+            
             
         }
     }
