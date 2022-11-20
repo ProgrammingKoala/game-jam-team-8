@@ -4,63 +4,40 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
-    private SpriteRenderer _sr;
-    private bool _onCooldown = false;
     [SerializeField] private float _attackCooldown;
-    private bool _isAttacking;
-    private bool _isTouchingPlayer;
-    void Start()
+    private Animator _animator; 
+
+    private void Start()
     {
-        _sr = GetComponent<SpriteRenderer>();
-        _sr.color = Color.clear;
-        _isTouchingPlayer = false;
+        _animator= GetComponentInParent<Animator>();
+        Debug.Log(_animator.name+" "+ _animator.GetBool("isOnCooldown"));
     }
 
     private void Attack(bool isAttacking)
     {
-        if (isAttacking)
+        if(isAttacking)
         {
-            _isAttacking = true;
-            StartCoroutine(AttackEnume(_attackCooldown));
+            if (!_animator.GetBool("isOnCooldown"))
+            {
+                StartCoroutine(AttackCoroutine());
+            }
         }
         else
         {
-            isAttacking= false;
-            StopCoroutine(AttackEnume(_attackCooldown));
+            StopCoroutine(AttackCoroutine());
         }
     }
 
 
-    private IEnumerator AttackEnume(float seconds)
+    private IEnumerator AttackCoroutine()
     {
-        while(_isAttacking) {
-            _onCooldown = true;
-            _sr.color = Color.white;
-            _isAttacking = true;
-            yield return new WaitForSeconds(0.5f);
-            _isAttacking = false;
-            _sr.color = Color.clear;
-            yield return new WaitForSeconds(seconds);
-            _onCooldown = false;
-            _isAttacking = true;
-            if (_isTouchingPlayer)
-            {
-                GameEvents.onPlayerTakeDamage();
-            }
-        }
+        GameEvents.onPlayerTakeDamage();
+        _animator.SetBool("isOnCooldown", true);
+        Debug.Log(_animator.name + " " + _animator.GetBool("isOnCooldown"));
+        yield return new WaitForSeconds(_attackCooldown);
+        _animator.SetBool("isOnCooldown", false);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        _isTouchingPlayer = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        _isAttacking= false;
-    }
-
+   
     private void OnEnable()
     {
         GameEvents.onEnemyAttack += Attack;
