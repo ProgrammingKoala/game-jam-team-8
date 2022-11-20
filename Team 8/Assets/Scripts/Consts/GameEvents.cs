@@ -10,6 +10,7 @@ public class GameEvents
     public static Action onEnemyTakeDamage;
     public static Action onPlayerTakeDamage;
     public static Action onEnemyAttack;
+    public static Action onSceneChange;
 
     void DoorCollision(bool isColliding)
     {
@@ -34,5 +35,10 @@ public class GameEvents
     void EnemyAttack()
     {
         onEnemyAttack?.Invoke();
+    }
+
+    void SceneChange() 
+    { 
+        onSceneChange?.Invoke();
     }
 }
