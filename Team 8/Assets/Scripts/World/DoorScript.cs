@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,12 +38,19 @@ public class DoorScript : MonoBehaviour
             Debug.Log("Change scene");
             _isPlayerColliding = false;
             GameStatics.respownPointNumber = _numOfRespown;
-            SceneManager.LoadScene(_destinationScene.name);
+            StartCoroutine(ReloadScene());
         }
         else if (_isPlayerColliding)
         {
             GameEvents.onMessage("Press E to interact");
         }
+    }
+
+    private IEnumerator ReloadScene()
+    {
+        GameEvents.onSceneChange();
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(_destinationScene.name);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

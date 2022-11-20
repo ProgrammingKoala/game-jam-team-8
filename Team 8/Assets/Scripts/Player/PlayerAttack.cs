@@ -11,11 +11,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _attackCooldown;
     [SerializeField] private float _parryCooldown;
     private bool _isAttacking;
+    private Animator _animator;
  
     void Start()
     {      
-        _sr = GetComponentInChildren<SpriteRenderer>();
-        _sr.color = Color.clear;
+        _animator = GetComponentInParent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -33,12 +34,13 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator Attack(float seconds)
     {
+        _animator.SetTrigger(AnimatorNames.PLAYERATTACK);
         _attackOnCooldown = true;
-        _sr.color = Color.white;
+        
         _isAttacking= true;
         yield return new WaitForSeconds(0.5f);
         _isAttacking = false;
-        _sr.color = Color.clear;
+        
 
         yield return new WaitForSeconds(seconds);
 
@@ -48,11 +50,11 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator Parry(float seconds)
     {
         _parryOnCooldown = true;
-        _sr.color = Color.green;
+        
         GameStatics.playerIsParrying = true;
         yield return new WaitForSeconds(0.7f);
         GameStatics.playerIsParrying = false;
-        _sr.color = Color.clear;
+        
 
         yield return new WaitForSeconds(seconds);
 
