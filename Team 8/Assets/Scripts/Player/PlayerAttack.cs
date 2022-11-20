@@ -16,7 +16,6 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {      
         _animator = GetComponentInParent<Animator>();
-        
     }
 
     // Update is called once per frame
@@ -61,24 +60,35 @@ public class PlayerAttack : MonoBehaviour
         _parryOnCooldown = false;
     }
 
+    private IEnumerator waitToAttack(float seconds, Collider2D collision)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(collision.gameObject);
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (_isAttacking && collision.gameObject.CompareTag("Enemy"))
         {
-            GameEvents.onEnemyTakeDamage();
-            collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            // GameEvents.onEnemyTakeDamage();
+            // collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
-            //compute vector (length one) from game object's pivot to the player's pivot:
-            Vector3 hitVector = (collision.transform.position - transform.position).normalized;
+            // //compute vector (length one) from game object's pivot to the player's pivot:
+            // Vector3 hitVector = (collision.transform.position - transform.position).normalized;
 
-            //if you want only horizontal plane movement, disable y-component of hitVector:
-            hitVector = (collision.transform.position - transform.position);
-            hitVector.y = 0;
-            hitVector = hitVector.normalized;
+            // //if you want only horizontal plane movement, disable y-component of hitVector:
+            // hitVector = (collision.transform.position - transform.position);
+            // hitVector.y = 0;
+            // hitVector = hitVector.normalized;
 
 
-           // collision.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(hitVector * 2000);
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward);
+            //// collision.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(hitVector * 2000);
+            // collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward);
+
+
+            StartCoroutine(waitToAttack(2, collision));
+            
         }
     }
 }
