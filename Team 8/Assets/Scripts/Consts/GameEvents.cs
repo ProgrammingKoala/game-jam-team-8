@@ -7,6 +7,9 @@ public class GameEvents
 {
     public static Action<bool> onDoorCollision;
     public static Action<string> onMessage;
+    public static Action onEnemyTakeDamage;
+    public static Action onPlayerTakeDamage;
+    public static Action onEnemyAttack;
 
     void DoorCollision(bool isColliding)
     {
@@ -16,5 +19,20 @@ public class GameEvents
     void Massage(string massage)
     {
         onMessage?.Invoke(massage);
+    }
+
+    void EnemyTakeDamage()
+    {
+        onEnemyTakeDamage?.Invoke();
+    }
+
+    void PlayerTakeDamage()
+    {
+        onPlayerTakeDamage?.Invoke();
+    }
+
+    void EnemyAttack()
+    {
+        onEnemyAttack?.Invoke();
     }
 }
