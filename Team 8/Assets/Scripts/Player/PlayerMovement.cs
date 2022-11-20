@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool verticalMovement = false;
 
     private new Transform transform;
+    private Animator _animator;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         //rigidbody = GetComponent<Rigidbody2D>();
     
         transform = GetComponent<Transform>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -64,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             var pos = transform.position;
             Vector3 movementVector = new Vector2(moveHorizontal, moveVertical) * moveSpeed;
-
+            _animator.SetFloat(AnimatorNames.PLAYERSPEED, Mathf.Abs( moveHorizontal * moveSpeed));
             pos += movementVector;
             transform.position = pos;
         }
@@ -75,9 +77,9 @@ public class PlayerMovement : MonoBehaviour
     void Flip()
     {
         if (!isFacingRight)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         else
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
     }
 
     /*

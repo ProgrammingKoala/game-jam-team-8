@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Team 8/Assets/Sprites/anim1.png.meta
-guid: f7ca65a27382fbb4ab4fb92abbb6de5f
-========
-guid: 92bd58fa9a5f5db409b82f3a2c73a6df
->>>>>>>> afb63c8b5079733bb7c7aee939d2c55030ebf3b0:Team 8/Assets/Sprites/button_border.png.meta
+guid: f09530070fd60b14d865ebf0844b931a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,7 +115,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idleAnim_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 873
+        height: 1759
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6aedecec98be04685df7e69ea70fb1
+      internalID: -1484987191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idleAnim_1
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 873
+        height: 1759
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4839fd8873b9906478ec0d36661ef7ef
+      internalID: -1708048314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idleAnim_2
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 0
+        width: 873
+        height: 1759
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75fcd4336ce93a47a72b03caa2ddf62
+      internalID: 1198416933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -130,7 +189,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      idleAnim_0: -1484987191
+      idleAnim_2: 1198416933
+      idleAnim_1: -1708048314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
