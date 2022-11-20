@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: _destinationScene
       value: 
-      objectReference: {fileID: 102900000, guid: 7597489629d1b444cabd4bbcab5e6924, type: 3}
+      objectReference: {fileID: 102900000, guid: e02d378ae59b1544db43c264ea984c81, type: 3}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2683,7 +2683,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8407364, a: 1}
+  m_Color: {r: 0.6226415, g: 0.6063493, b: 0.40882877, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2701,7 +2701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003572586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.9, y: 0.1, z: 0}
+  m_LocalPosition: {x: 32.1, y: -2.4, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,9 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestChangeRoomScene2.unity
-    guid: 947273175fa6e1746970a17332dfabef
+    path: Assets/Scenes/MapScenes/Level0.unity
+    guid: 00c58aa8e5c1b734aa94f0d800e9865b
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level1.1.unity
+    guid: 8fee31fd20918c04fbedb485ed691cf2
   - enabled: 1
     path: Assets/Scenes/MapScenes/Level1.2.unity
     guid: 7597489629d1b444cabd4bbcab5e6924
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level1.3.unity
+    guid: 31e7af80367ecc74b9c0ac0fcadbaa3f
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level2.1.unity
+    guid: 2bf1bfe1ad1a4ef43b85057a6e087640
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level2.3.unity
+    guid: e02d378ae59b1544db43c264ea984c81
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level2.4.unity
+    guid: 2f94ba97246f6314eac21b182b745be4
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level3.1.unity
+    guid: 10497be8dd7c7de418dabf0736fc6f20
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level3.2.unity
+    guid: 5d57532eec3c300499028b47cd18e82d
+  - enabled: 1
+    path: Assets/Scenes/MapScenes/Level3.4.unity
+    guid: fd9cf816bc7886a45865797957607123
   m_configObjects: {}

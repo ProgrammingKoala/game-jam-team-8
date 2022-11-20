@@ -53,7 +53,7 @@ public class PuzzleButton : MonoBehaviour
         }
 
 
-        if (!lamp1.isRed && !lamp2.isRed && !lamp3.isRed && !powerOnMessageShown)
+        if (_isPlayerColliding && !lamp1.isRed && !lamp2.isRed && !lamp3.isRed && !powerOnMessageShown)
         {
             ShowAllGreen();
             GameEvents.onMessage("Congrats, the Power is ON");
@@ -62,6 +62,16 @@ public class PuzzleButton : MonoBehaviour
         }
 
     }
+
+
+    // private IEnumerator party()
+    // {
+    //     while (true)
+    //     {
+    //         PressButton();
+    //         yield return new WaitForSeconds(1);
+    //     }
+    // }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
