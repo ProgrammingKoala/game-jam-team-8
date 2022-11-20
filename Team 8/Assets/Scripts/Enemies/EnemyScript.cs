@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float _takeDamageCooldown;
     private bool _damageOnCooldown;
     private bool _isDying;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,14 @@ public class EnemyScript : MonoBehaviour
         if(_player == null) { _player = GameObject.FindGameObjectWithTag("Player");  }
         float distanceFromPlayer = Mathf.Abs(_rb.transform.position.x - _player.transform.position.x);
         _animator.SetFloat(AnimatorNames.ENEMYDISTANCEFROMPLAYER, distanceFromPlayer);
+        if(_rb.transform.position.x - _player.transform.position.x > 0 && _rb.transform.localScale.x>0)
+        {
+            _rb.transform.localScale = new Vector3(-_rb.transform.localScale.x, _rb.transform.localScale.y, _rb.transform.localScale.z);
+        }
+        else if (_rb.transform.position.x - _player.transform.position.x < 0 && _rb.transform.localScale.x < 0)
+        {
+            _rb.transform.localScale = new Vector3(-_rb.transform.localScale.x, _rb.transform.localScale.y, _rb.transform.localScale.z);
+        }
     }
 
     private void TakeDamage()

@@ -9,7 +9,7 @@ public class GameEvents
     public static Action<string> onMessage;
     public static Action onEnemyTakeDamage;
     public static Action onPlayerTakeDamage;
-    public static Action onEnemyAttack;
+    public static Action<bool> onEnemyAttack;
     public static Action onSceneChange;
 
     void DoorCollision(bool isColliding)
@@ -32,9 +32,9 @@ public class GameEvents
         onPlayerTakeDamage?.Invoke();
     }
 
-    void EnemyAttack()
+    void EnemyAttack(bool isAttacking)
     {
-        onEnemyAttack?.Invoke();
+        onEnemyAttack?.Invoke(isAttacking);
     }
 
     void SceneChange() 

@@ -33,7 +33,7 @@ public class PuzzleButton : MonoBehaviour
             buttonsMessageShown = true;
         }
 
-        if (clicksNumber == 2 && !lampsMessageShown)
+        if (clicksNumber == 1 && !lampsMessageShown)
         {
             GameEvents.onMessage("You have to turn on all of the lights");
             lampsMessageShown = true;
