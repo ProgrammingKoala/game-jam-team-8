@@ -66,6 +66,19 @@ public class PlayerAttack : MonoBehaviour
         if (_isAttacking && collision.gameObject.CompareTag("Enemy"))
         {
             GameEvents.onEnemyTakeDamage();
+            collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
+            //compute vector (length one) from game object's pivot to the player's pivot:
+            Vector3 hitVector = (collision.transform.position - transform.position).normalized;
+
+            //if you want only horizontal plane movement, disable y-component of hitVector:
+            hitVector = (collision.transform.position - transform.position);
+            hitVector.y = 0;
+            hitVector = hitVector.normalized;
+
+
+           // collision.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(hitVector * 2000);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward);
         }
     }
 }
