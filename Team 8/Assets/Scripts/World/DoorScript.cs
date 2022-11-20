@@ -50,7 +50,7 @@ public class DoorScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))  //TODO Zmieniec na const z tagami
         {
-            _isPlayerColliding= true;
+            _isPlayerColliding = true;
         }
     }
 
