@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleLamp : MonoBehaviour
 {
+    [SerializeField] private PuzzleLampCross plc;
     [SerializeField] public int lampNumber;
     [SerializeField] public bool isOn = true;
     [SerializeField] public bool isRed = true;
@@ -20,7 +21,7 @@ public class PuzzleLamp : MonoBehaviour
         // StartCoroutine(party());
     }
 
-    //zmiana koloru lampy
+    //zmiana koloru lampy na podany
     public void SetColor(Color color)
     {
         sr.color = color;
@@ -39,7 +40,7 @@ public class PuzzleLamp : MonoBehaviour
     //zmiana koloru czerowny/zielony
     public void SwitchColor()
     {
-        if (isOn)
+        if (plc.isEnabled)
         {   
             if (isRed)
             {
@@ -57,17 +58,12 @@ public class PuzzleLamp : MonoBehaviour
     //włączanie/wyłączanie lampy
     public void SwitchLight()
     {
-        if (isOn)
-        {
-            rememberColor = sr.color;
-            SetColor(Color.grey);
-            isOn = false;
-        }
-        else
-        {
-            SetColor(rememberColor);
-            isOn = true;
-        }
+        plc.SwitchLampState();
+    }
+
+    public void EnableLight()
+    {
+        plc.SetEnabled();
     }
 
 }

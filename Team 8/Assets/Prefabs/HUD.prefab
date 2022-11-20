@@ -215,7 +215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -675, y: 378}
+  m_AnchoredPosition: {x: -670, y: 474}
   m_SizeDelta: {x: 500, y: 30.704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3906041970710970807
@@ -292,9 +292,9 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 13107
+    ctime0: 16384
     ctime1: 32768
-    ctime2: 41634
+    ctime2: 65535
     ctime3: 65535
     ctime4: 0
     ctime5: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 1
-    m_NumColorKeys: 4
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _fill: {fileID: 3906041970741882286}
 --- !u!1 &3906041970741882284

@@ -7,4 +7,5 @@ public class ButtonNames
     public const string HorizontalAxis = "Horizontal";
     public const string Action = "Action";
     public const string Attack = "Attack";
+    public const string Parry = "Fire3";
 }
