@@ -45,7 +45,7 @@ public class PlayerExistance : MonoBehaviour
         _isDying = true;
         _animator.SetTrigger(AnimatorNames.PLAYERDIE);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneConsts.MENU);
+        SceneManager.LoadScene(SceneConsts.GAMEOVER);
     }
 
     private IEnumerator TakeDamageEnme(float cooldown)
@@ -58,13 +58,11 @@ public class PlayerExistance : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.onEnemyTakeDamage += TakeDamage;
+        GameEvents.onPlayerTakeDamage += TakeDamage;
     }
 
     private void OnDisable()
     {
-        GameEvents.onEnemyTakeDamage -= TakeDamage;
+        GameEvents.onPlayerTakeDamage -= TakeDamage;
     }
-
-
 }
