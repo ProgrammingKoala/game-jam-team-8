@@ -71,7 +71,8 @@ public class CodeLock : MonoBehaviour
                 GameEvents.onMessage("Wrong code! Provide correct code or press Esc to leave");
             else
             {
-                GameEvents.onMessage("Correct code! You found a key");
+                GameEvents.onMessage("Correct code! You found a Key Card");
+                GameStatics.haveKey = true;
                 StartCoroutine(CloseInSeconds(3f));
             }
         }
