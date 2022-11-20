@@ -7,6 +7,7 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private float _speed;
     private GameObject _player;
+    public float xDirection;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,8 +19,7 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        float xDirection = (animator.transform.position.x - _player.transform.position.x) < 0 ? 1 : -1;
-        _rb.transform.localScale = new Vector3(xDirection* _rb.transform.localScale.x, _rb.transform.localScale.y, _rb.transform.localScale.z);
+        xDirection = (animator.transform.position.x - _player.transform.position.x) < 0 ? 1 : -1;
         _rb.velocity = new Vector2(xDirection * _speed, 0);
     }
 
