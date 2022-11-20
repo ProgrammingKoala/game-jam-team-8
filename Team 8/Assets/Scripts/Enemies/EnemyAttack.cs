@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
 
     private SpriteRenderer _sr;
+    private bool _onCooldown = false;
     [SerializeField] private float _attackCooldown;
     private bool _isAttacking;
     private bool _isTouchingPlayer;
@@ -34,12 +35,14 @@ public class EnemyAttack : MonoBehaviour
     private IEnumerator AttackEnume(float seconds)
     {
         while(_isAttacking) {
+            _onCooldown = true;
             _sr.color = Color.white;
             _isAttacking = true;
             yield return new WaitForSeconds(0.5f);
             _isAttacking = false;
             _sr.color = Color.clear;
             yield return new WaitForSeconds(seconds);
+            _onCooldown = false;
             _isAttacking = true;
             if (_isTouchingPlayer)
             {
