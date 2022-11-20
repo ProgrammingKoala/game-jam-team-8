@@ -19,7 +19,7 @@ public class EnemyMoveToPlayerBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float xDirection = (animator.transform.position.x - _player.transform.position.x) < 0 ? 1 : -1;
-        animator.gameObject.transform.localScale = new Vector3(xDirection, 1, 1);
+        _rb.transform.localScale = new Vector3(xDirection, 1, 1);
         _rb.velocity = new Vector2(xDirection * _speed, 0);
     }
 

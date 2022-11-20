@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerExistance : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class PlayerExistance : MonoBehaviour
         _isDying = true;
         _animator.SetTrigger(AnimatorNames.PLAYERDIE);
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneConsts.MENU);
     }
 
     private IEnumerator TakeDamageEnme(float cooldown)
