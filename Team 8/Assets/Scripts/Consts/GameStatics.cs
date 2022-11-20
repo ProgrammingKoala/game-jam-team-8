@@ -6,4 +6,6 @@ public class GameStatics
     public static bool haveKey = false;
     public static bool powerIsOn = false;
     public static Transform playerPosition = null;
+    public static int playerMaxHealth = 100;
+    public static int playerCurrentHealth = 100;
 }

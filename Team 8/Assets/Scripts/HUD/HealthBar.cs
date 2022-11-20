@@ -9,6 +9,16 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Gradient _gradient;
     [SerializeField] private Image _fill;
 
+    public void Start()
+    {
+        SetMaxHealth(GameStatics.playerMaxHealth);
+    }
+
+    private void Update()
+    {
+        SetHealth();
+    }
+
     public void SetMaxHealth(int health)
     {
         _slider.maxValue = health;
@@ -16,10 +26,20 @@ public class HealthBar : MonoBehaviour
 
         _fill.color = _gradient.Evaluate(1f);
     }
-    public void SetHealth(int health)
+    public void SetHealth()
     {
-        _slider.value = health;
+        _slider.value = GameStatics.playerCurrentHealth;
 
         _fill.color = _gradient.Evaluate(_slider.normalizedValue);
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.onPlayerTakeDamage += SetHealth;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.onPlayerTakeDamage -= SetHealth;
     }
 }

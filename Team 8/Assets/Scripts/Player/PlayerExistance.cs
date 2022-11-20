@@ -7,32 +7,27 @@ public class PlayerExistance : MonoBehaviour
     
     private Animator _animator;
     
-    [SerializeField] int HP;
-    [SerializeField] private float _takeDamageCooldown;
+    [SerializeField] float _takeDamageCooldown;
+    private static int currentHP;
     private bool _damageOnCooldown;
     private bool _isDying;
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
-        
+        currentHP = GameStatics.playerMaxHealth;
         _isDying = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void TakeDamage()
     {
-        if (HP > 0 && !(_isDying || _damageOnCooldown))
+        if (currentHP > 0 && !(_isDying || _damageOnCooldown))
         {
             StartCoroutine(TakeDamageEnme(_takeDamageCooldown));
-            HP--;
+            currentHP -= 25;
+            GameStatics.playerCurrentHealth = currentHP;
         }
-        else if (HP == 0 && !(_isDying || _damageOnCooldown))
+        else if (currentHP == 0 && !(_isDying || _damageOnCooldown))
         {
             StartCoroutine(Die());
         }
