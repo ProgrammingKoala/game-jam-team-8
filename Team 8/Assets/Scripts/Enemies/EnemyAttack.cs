@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-    private IEnumerator AttackEnume(float secons)
+    private IEnumerator AttackEnume(float seconds)
     {
         _onCooldown = true;
         _sr.color = Color.white;
@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _isAttacking = false;
         _sr.color = Color.clear;
-        yield return new WaitForSeconds(secons);
+        yield return new WaitForSeconds(seconds);
         _onCooldown = false;
     }
 
