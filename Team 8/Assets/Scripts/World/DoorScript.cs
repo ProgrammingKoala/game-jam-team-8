@@ -35,7 +35,7 @@ public class DoorScript : MonoBehaviour
         }
         if (_isPlayerColliding && _isClosed && _needKey) 
         {
-            GameEvents.onMessage("You need a key");
+            GameEvents.onMessage("You need a key card");
         }
         else if (_isPlayerColliding && _isClosed && _needGeneralPower)
         {
