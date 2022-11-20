@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12da2e8a34609594c986303c6c95eca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCooldown: 2
+  _attackCooldown: 1
   _parryCooldown: 0
 --- !u!1 &6461196531891588826
 GameObject:
