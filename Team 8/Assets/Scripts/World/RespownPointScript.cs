@@ -7,7 +7,7 @@ public class RespownPointScript : MonoBehaviour
     [SerializeField] private int _respownPonitNumber = 0;
     [SerializeField] private GameObject _playerPrefab;
 
-    private void Start()
+    private void OnEnable()
     {
         if(_respownPonitNumber == GameStatics.respownPointNumber)
         {

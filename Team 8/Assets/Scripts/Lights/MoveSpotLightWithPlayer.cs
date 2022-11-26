@@ -7,10 +7,11 @@ public class MoveSpotLightWithPlayer : MonoBehaviour
     private bool isFlipped = false;
     private float previous;
 
+
     void Update()
     {
         if (GameStatics.playerPosition != null)
-        {       
+        {
             //Debug.Log(previous);
             Flip(previous);
             if (isFlipped)

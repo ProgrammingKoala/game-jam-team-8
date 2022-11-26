@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     [SerializeField] private bool moveSmooth = false;
-    [SerializeField] private bool freeze = false;
+    [SerializeField] private bool isFrozen = false;
     [SerializeField] private bool verticalMovement = false;
 
     private new Transform transform;
@@ -50,19 +50,19 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //odwracanie Playera prawo/lewo
-        if (moveHorizontal < 0)
+        if (moveHorizontal < 0 && !isFrozen)
         {
             isFacingRight = false;
             Flip();
         }
-        else if (moveHorizontal > 0)
+        else if (moveHorizontal > 0 && !isFrozen)
         {
             isFacingRight = true;
             Flip();
         }
 
         //poruszanie Playera
-        if (transform != null && !freeze)
+        if (transform != null && !isFrozen)
         {
             var pos = transform.position;
             Vector3 movementVector = new Vector2(moveHorizontal, moveVertical) * moveSpeed;
@@ -100,11 +100,11 @@ public class PlayerMovement : MonoBehaviour
     //freezowanie Playera
     public void SetFreeze()
     {
-        freeze = true;
+        isFrozen = true;
     }
 
     public void SetUnFreeze()
     {
-        freeze = false;
+        isFrozen = false;
     }
 }

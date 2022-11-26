@@ -8,13 +8,17 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SceneConsts.MENU);
     }
-    public void LoadInstractions()
+    public void LoadInstructions()
     {
         SceneManager.LoadScene(SceneConsts.INSTRUCTIONS);
     }
     public void LoadCreators()
     {
         SceneManager.LoadScene(SceneConsts.CREATORS);
+    }
+    public void LoadIntro()
+    {
+        SceneManager.LoadScene(SceneConsts.INTRO);
     }
 
     public void LoadLevel1_1()

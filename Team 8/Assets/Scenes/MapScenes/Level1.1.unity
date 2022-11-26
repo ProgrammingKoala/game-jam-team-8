@@ -7439,6 +7439,10 @@ PrefabInstance:
       propertyPath: _numOfRespown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
+      propertyPath: _destinationSceneIndex
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 3

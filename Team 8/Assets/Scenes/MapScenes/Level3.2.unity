@@ -712,6 +712,10 @@ PrefabInstance:
       propertyPath: _destinationScene
       value: 
       objectReference: {fileID: 102900000, guid: 10497be8dd7c7de418dabf0736fc6f20, type: 3}
+    - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
+      propertyPath: _destinationSceneIndex
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -785,6 +789,10 @@ PrefabInstance:
       propertyPath: _destinationScene
       value: 
       objectReference: {fileID: 102900000, guid: fd9cf816bc7886a45865797957607123, type: 3}
+    - target: {fileID: 2363010175962246700, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
+      propertyPath: _destinationSceneIndex
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2363010175962246702, guid: 89947f081046f4b41a3f3eb23d1f55c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2963,7 +2971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085995773513433499, guid: e61120f2ec371034eaf1f6f413c5a0d9, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6085995773513433499, guid: e61120f2ec371034eaf1f6f413c5a0d9, type: 3}
       propertyPath: m_AnchorMax.x

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField] private Object _destinationScene;
+    [SerializeField] private int _destinationSceneIndex;
     [SerializeField] private int _numOfRespown = 0;
     [SerializeField] private bool _needKey = false;
     [SerializeField] private bool _needGeneralPower = false;
@@ -35,7 +36,7 @@ public class DoorScript : MonoBehaviour
         }
         if (_isPlayerColliding && _isClosed && _needKey) 
         {
-            GameEvents.onMessage("You need a key card");
+            GameEvents.onMessage("You need a Keycard");
         }
         else if (_isPlayerColliding && _isClosed && _needGeneralPower)
         {
@@ -57,7 +58,8 @@ public class DoorScript : MonoBehaviour
     {
         GameEvents.onSceneChange();
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(_destinationScene.name);
+        //SceneManager.LoadScene(_destinationScene.name);
+        SceneManager.LoadScene(_destinationSceneIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
